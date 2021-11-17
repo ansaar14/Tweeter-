@@ -1,0 +1,48 @@
+.new-tweet {
+  
+  margin-top: 150px;
+  width: 100%;
+  
+}
+
+.submit button {
+  font-family: "Bungee";
+  color:rgb(240, 242, 245);
+  background-color: #4056A1;
+  
+}
+
+.submit {
+  font-family: "Bungee";
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+
+}
+
+textarea {
+  border-bottom: solid;
+  background-color: #f4f1ec;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  padding-top: 10px;
+  
+}
+
+.label-text {
+display: flex;
+flex-direction: column;
+
+}
+
+.tweet-form{
+  align-self: center;
+
+
+}
+
+h2 {
+  text-align: center;
+}
+
