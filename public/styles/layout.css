@@ -18,7 +18,28 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: "Source Sans Pro", "sans-serif";
 }
+
+#logo {
+  font-family: "Bungee";
+} 
+
+main {
+/* width: 80%; */
+margin: 0 10%;
+background-color: #f4f1ec;
+/* display: flex;
+align-items: center;
+justify-content: center; */
+
+
+}
+
+.error {
+  color:red;
+}
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
