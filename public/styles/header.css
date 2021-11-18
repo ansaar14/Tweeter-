@@ -11,3 +11,11 @@
   position: relative;
   top: 120px;
 }
+
+@media only screen and (min-width: 1024px) {
+  .head {
+    float: left;
+    width: 28vw;
+    margin: 3em 0.5em 0.5em 1.5em;
+  }
+}
