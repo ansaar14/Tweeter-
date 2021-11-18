@@ -29,3 +29,10 @@
   font-size: larger;
   margin: 1.5em;
 }
+
+@media only screen and (max-width: 1024px) {
+  .nav {
+    background-color: #e1c8bc;
+    background-image: url("https://www.transparenttextures.com/patterns/binding-dark.png");
+  }
+}
