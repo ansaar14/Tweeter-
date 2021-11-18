@@ -115,21 +115,28 @@ $("#form").submit(function(event) {
   let char = $("textarea").val().length
 
   if (char === 0){
-    alert("Please compose tweet")
+    $(".errormsg").
+    text("⚠ Please compose tweet ⚠").
+    slideDown("slow");
   }
-  else if (char > 140){
-    alert("Tweet can only be 140 characters or less")
-  }
+  if (char > 140){
+    $(".errormsg").text("⚠ Tweet can only be 140 characters or less ⚠").
+    slideDown("slow");
+
+  } 
+  if (char > 0 && char < 140) {
    $.ajax({
           method: "POST",
           url: "/tweets",
           data: form.serialize(),      
   }).then(function (data) {
     loadTweets(); 
+    $(".errormsg").hide()
     $("textarea").val("");
   }).catch(function (error) {
-    alert(error.message);
+    console.log(error.message);
   });
+  };
 
 })
 
@@ -137,5 +144,9 @@ loadTweets();
 
 });
 
-
+const escape = function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
