@@ -43,10 +43,14 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+
+    <!-- Disable viewport zooming -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
+    
     <nav>
       
       <div class="nav">
@@ -63,6 +67,7 @@
     
     </nav>
 
+    <div class="parent">
     <header class="head">
       <div>
           <img src="/images/profile-hex.png"> 
@@ -73,8 +78,7 @@
       </div>
   </header>
   
-
-    <!-- Page-specific (main) content here -->
+    
     <main class="container">
       
       
@@ -84,6 +88,7 @@
         <span class="errormsg"></span>
 
         </div>
+
         <form id="form" action="/tweets" method="post">
           <div class="label-text">
           <label for="tweet-text">What are you humming about?</label>
@@ -100,52 +105,10 @@
 
       </section>
 
-      <!-- beginning of tweets section    -->
       <section class="tweets-container">
-        <!-- <article class = "tweet-cont2">
-          <div>
-            <header>
-
-              <div class="tweet-head"> -->
-                <!-- first header -->
-                <!-- <div>
-                  <i class="fas fa-user-alt"></i>
-                  <span>
-                    Rhoda James
-                  </span>
-                </div>
-                <div>
-                  <span>@Mrs.Jacobs</span>
-                </div>
-              </div>        
-            </header> -->
-              <!-- body div -->
-              <!-- <div class= "tweet-body">
-                Hello World!
-              </div> -->
-              <!-- footer div  -->
-              <!-- <div class="tweet-footer">
-                <div>
-                  10 days ago
-                </div>
-                <footer>
-                  <i class="fas fa-flag"></i>
-                  <i class="fas fa-retweet"></i>
-                  <i class="fas fa-heart"></i>
-                </footer>
-              </div>
-
-
-          </div> -->
-
-          
         
-
-
-
-        <!-- </article> -->
-
     </section>
     </main>
+  </div>
   </body>
 </html>
