@@ -77,10 +77,13 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       
-
+      
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        
+        <div class="error_container">
+        <span class="errormsg"></span>
+
+        </div>
         <form id="form" action="/tweets" method="post">
           <div class="label-text">
           <label for="tweet-text">What are you humming about?</label>
