@@ -1,7 +1,5 @@
 $(document).ready(function () {
   $("textarea").keyup(function () {
-    // console.log(this);
-
     let value = $(this).val();
     let maxlength = $(this).data("maxlength");
 
