@@ -12,7 +12,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 !["Tweets"](https://github.com/ansaar14/Tweeter-/blob/master/docs/tweets.png)
 
-!["Error messages"](https://github.com/ansaar14/Tweeter-/blob/master/docs/Error%20message.png)(https://github.com/ansaar14/Tweeter-/blob/master/docs/error2.png)
+!["Error messages"](https://github.com/ansaar14/Tweeter-/blob/master/docs/Error%20message.png)
+
+!["Error messages"](https://github.com/ansaar14/Tweeter-/blob/master/docs/error2.png)
 
 !["Hover functionaility"](https://github.com/ansaar14/Tweeter-/blob/master/docs/hover.png)
 
