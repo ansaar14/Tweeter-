@@ -5,7 +5,6 @@
  */
 // const $tweet = $(`<article class="tweet">Hello world</article>`);
 
-
 // const tweetData = {
 //   "user": {
 //     "name": "Newton",
@@ -43,19 +42,16 @@
 //   }
 // ]
 
-
-const renderTweets = function(tweets) {
-  $('.tweets-container').empty()
-  for (let tweet of tweets){
-    $('.tweets-container').prepend(createTweetElement(tweet))
-
+const renderTweets = function (tweets) {
+  $(".tweets-container").empty();
+  for (let tweet of tweets) {
+    $(".tweets-container").prepend(createTweetElement(tweet));
   }
-}
+};
 
-const createTweetElement = function(tweet_data){
-
-let $tweet = $("<article>").addClass("tweet-cont2");
-$tweet.append(`
+const createTweetElement = function (tweet_data) {
+  let $tweet = $("<article>").addClass("tweet-cont2");
+  $tweet.append(`
           <div>
             <header>
 
@@ -90,63 +86,59 @@ $tweet.append(`
           </div>
       
 `);
-return $tweet
-}
+  return $tweet;
+};
 
-const loadTweets = function() {
+const loadTweets = function () {
   $.ajax({
-      url:"/tweets",
-      method: "GET",
-      dataType: "json",
-    }).then(function (data) {
+    url: "/tweets",
+    method: "GET",
+    dataType: "json",
+  })
+    .then(function (data) {
       renderTweets(data);
-    }).catch(function (error) {
+    })
+    .catch(function (error) {
       alert(error.message);
     });
-  }
+};
 
+$(document).ready(function () {
+  $("#form").submit(function (event) {
+    event.preventDefault();
+    let form = $(this);
+    let char = $("textarea").val().length;
 
-$(document).ready(function(){
-
-
-$("#form").submit(function(event) {
-  event.preventDefault();
-  let form = $(this);
-  let char = $("textarea").val().length
-
-  if (char === 0){
-    $(".errormsg").
-    text("⚠ Please compose tweet ⚠").
-    slideDown("slow");
-  }
-  if (char > 140){
-    $(".errormsg").text("⚠ Tweet can only be 140 characters or less ⚠").
-    slideDown("slow");
-
-  } 
-  if (char > 0 && char < 140) {
-   $.ajax({
-          method: "POST",
-          url: "/tweets",
-          data: form.serialize(),      
-  }).then(function (data) {
-    loadTweets(); 
-    $(".errormsg").hide()
-    $("textarea").val("");
-  }).catch(function (error) {
-    console.log(error.message);
+    if (char === 0) {
+      $(".errormsg").text("⚠ Please compose tweet ⚠").slideDown("slow");
+    }
+    if (char > 140) {
+      $(".errormsg")
+        .text("⚠ Tweet can only be 140 characters or less ⚠")
+        .slideDown("slow");
+    }
+    if (char > 0 && char < 140) {
+      $.ajax({
+        method: "POST",
+        url: "/tweets",
+        data: form.serialize(),
+      })
+        .then(function (data) {
+          loadTweets();
+          $(".errormsg").hide();
+          $("textarea").val("");
+        })
+        .catch(function (error) {
+          console.log(error.message);
+        });
+    }
   });
-  };
 
-})
-
-loadTweets();
-
+  loadTweets();
 });
 
-const escape = function(str) {
-  let div = document.createElement('div');
+const escape = function (str) {
+  let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
-
