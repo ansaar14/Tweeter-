@@ -6,7 +6,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -23,23 +25,20 @@ body {
 
 #logo {
   font-family: "Bungee";
-} 
+}
 
 main {
-/* width: 80%; */
-margin: 0 10%;
-background-color: #f4f1ec;
-/* display: flex;
+  /* width: 80%; */
+  margin: 0 10%;
+  background-color: #f4f1ec;
+  /* display: flex;
 align-items: center;
 justify-content: center; */
-
-
 }
 
 .error {
-  color:red;
+  color: red;
 }
-
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
