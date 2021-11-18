@@ -12,10 +12,6 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -28,18 +24,18 @@ body {
 }
 
 main {
-  /* width: 80%; */
-  margin: 0 10%;
+  margin-left: 1rem;
+  margin-right: 1rem;
   background-color: #f4f1ec;
-  /* display: flex;
-align-items: center;
-justify-content: center; */
 }
 
 .error {
   color: red;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+@media only screen and (min-width: 1024px) {
+  main {
+    float: right;
+    width: 85vh;
+  }
+}
