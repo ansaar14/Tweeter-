@@ -46,3 +46,19 @@ h2 {
   text-align: center;
 }
 
+.errormsg {
+  display:none;
+  border: 2.5px solid red;
+  border-radius: 10px;
+  color: red;
+  padding: 1px;
+  
+
+}
+
+.error_container {
+  align-self: center;
+  margin-bottom: 50px;
+
+}
+
