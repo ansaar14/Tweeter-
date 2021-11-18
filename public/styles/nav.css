@@ -1,7 +1,7 @@
 .nav {
   height: 120px;
   width: 100%;
-  background-color: #4056A1;
+  background-color: #4056a1;
   color: #ffffff;
   position: fixed;
   top: 0;
@@ -28,4 +28,4 @@
   color: #ffffff;
   font-size: larger;
   margin: 1.5em;
-} 
+}
