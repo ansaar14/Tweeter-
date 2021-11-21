@@ -4,14 +4,18 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const renderTweets = function (tweets) {
+
+//function to see latest tweets //
+const renderTweets = function(tweets) {
   $(".tweets-container").empty();
   for (let tweet of tweets) {
     $(".tweets-container").prepend(createTweetElement(tweet));
   }
 };
 
-const createTweetElement = function (tweet_data) {
+// function to create new tweet article //
+
+const createTweetElement = function(tweet_data) {
   let $tweet = $("<article>").addClass("tweet-cont2");
   $tweet.append(`
           <div>
@@ -51,22 +55,26 @@ const createTweetElement = function (tweet_data) {
   return $tweet;
 };
 
-const loadTweets = function () {
+
+//function to load tweets //
+const loadTweets = function() {
   $.ajax({
     url: "/tweets",
     method: "GET",
     dataType: "json",
   })
-    .then(function (data) {
+    .then(function(data) {
       renderTweets(data);
     })
-    .catch(function (error) {
+    .catch(function(error) {
       alert(error.message);
     });
 };
 
-$(document).ready(function () {
-  $("#form").submit(function (event) {
+// validating that tweets aren't empty or too long, and if they are validated, loads the tweet, resets the textarea to empty then resets the counter //
+
+$(document).ready(function() {
+  $("#form").submit(function(event) {
     event.preventDefault();
     let form = $(this);
     let char = $("textarea").val().length;
@@ -79,19 +87,19 @@ $(document).ready(function () {
         .text("⚠ Tweet can only be 140 characters or less ⚠")
         .slideDown("slow");
     }
-    if (char > 0 && char < 140) {
+    if (char > 0 && char <= 140) {
       $.ajax({
         method: "POST",
         url: "/tweets",
         data: form.serialize(),
       })
-        .then(function (data) {
+        .then(function(data) {
           loadTweets();
           $(".errormsg").hide();
           $("textarea").val("");
-          $(".counter").val(140);
+          $(".counter span").text(140);
         })
-        .catch(function (error) {
+        .catch(function(error) {
           console.log(error.message);
         });
     }
@@ -100,7 +108,9 @@ $(document).ready(function () {
   loadTweets();
 });
 
-const escape = function (str) {
+// function to escape some text for XXS //
+
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
