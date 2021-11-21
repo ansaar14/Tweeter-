@@ -1,3 +1,5 @@
+//function for character counter below text area //
+
 $(document).ready(function () {
   $("textarea").keyup(function () {
     let value = $(this).val();
